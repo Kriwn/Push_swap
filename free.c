@@ -6,7 +6,7 @@
 /*   By: krwongwa <krwongwa@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/07 17:35:32 by krwongwa          #+#    #+#             */
-/*   Updated: 2024/06/07 13:24:39 by krwongwa         ###   ########.fr       */
+/*   Updated: 2024/06/09 14:58:05 by krwongwa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_error(t_push_swap data)
 {
-	ft_putstr("KO\n");
+	write(2,"ERROR\n",6);
 	cleardata(data);
 	exit(0);
 }

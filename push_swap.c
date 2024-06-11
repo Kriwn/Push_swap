@@ -6,7 +6,7 @@
 /*   By: krwongwa <krwongwa@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 21:38:52 by krwongwa          #+#    #+#             */
-/*   Updated: 2024/06/07 21:33:09 by krwongwa         ###   ########.fr       */
+/*   Updated: 2024/06/12 02:23:38 by krwongwa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ void initdata(t_push_swap *data,char **argv,int argc)
 	data->b = NULL;
 	data->ans = loopjoin(argv, argc);
 	data->temp = ft_split(data->ans, ' ');
+	data->max_index = 0;
 }
 
 
@@ -25,7 +26,6 @@ int main(int argc, char **argv)
 {
 	t_push_swap data;
 
-	/// brok new line;
 	initdata(&data, argv, argc);
 	if (argc < 2)
 		ft_error(data);
@@ -34,16 +34,29 @@ int main(int argc, char **argv)
 		ft_error(data);
 		return (0);
 	}
-	if (!fill_a(&data.a,data.temp))
+	data.max_index = fill_a(&data.a,data.temp);
+	if (data.max_index == -1)
 	{
 		ft_error(data);
 		return (0);
 	}
-	// if (!is_sort(data.a)) //need fix
-	// {
-	// 	// presort();
-	// 	// sort(data);
-	// }
+	if (!is_sort(data.a))
+	{
+		pre_sort(data);
+		sort(&data);
+	}
 	print_list(data.a);
+	// print_list_index(data.a);
+
+
+	// swapa(&data.a);
+	// print_list(data.a);
+	// print_list(data.b);
+	// pusha(&data.a,&data.b);
+	// pusha(&data.a,&data.b);
+	// pusha(&data.a,&data.b);
+	// printf("-----------------------------\n");
+	// print_list(data.a);
+
 	cleardata(data);
 }

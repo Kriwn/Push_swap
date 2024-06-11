@@ -6,7 +6,7 @@
 /*   By: krwongwa <krwongwa@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/12 15:48:30 by krwongwa          #+#    #+#             */
-/*   Updated: 2024/06/07 13:35:24 by krwongwa         ###   ########.fr       */
+/*   Updated: 2024/06/10 13:10:34 by krwongwa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,13 +64,13 @@ int	fill_a(t_stack **a,char **data)
 	{
 		value = ft_atol(data[i]);
 		if (value > INT_MAX || value < INT_MIN)
-			return (0);
+			return (-1);
 		add_node(a, value);
 		i++;
 	}
 	if (!is_duplicate(*a))
-		return (0);
-	return (1);
+		return (-1);
+	return (i);
 }
 
 //--------------for debug----------------//
@@ -79,6 +79,15 @@ void	print_list(t_stack *stack)
 	while (stack)
 	{
 		printf("Value of stack is %d\n",stack->value);
+		stack = stack->next;
+	}
+}
+
+void	print_list_index(t_stack *stack)
+{
+	while (stack)
+	{
+		printf("Index of stack is %d\n",stack->index);
 		stack = stack->next;
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: krwongwa <krwongwa@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/08 15:43:17 by krwongwa          #+#    #+#             */
-/*   Updated: 2024/06/07 21:54:40 by krwongwa         ###   ########.fr       */
+/*   Updated: 2024/06/08 23:24:50 by krwongwa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ int	checkdigit(size_t i,char *str)
 {
 	int	count;
 
-	// printf("Check digit\n");
 	count = 0;
 	while (str[i])
 	{
@@ -36,7 +35,6 @@ int	checkdigit(size_t i,char *str)
 		return (1);
 	else
 		return (0);
-
 }
 
 int	checkstr(char *str)
@@ -44,7 +42,6 @@ int	checkstr(char *str)
 	size_t	i;
 	int		len;
 
-	// printf("Check Str [%s]\n",str);git
 	i = 0;
 	while (str[i] == ' ' || (str[i] >= '\t' && str[i] <= '\r'))
 	{
@@ -62,7 +59,6 @@ int check(char **str)
 	size_t i;
 
 	i = 0;
-	// printf("Check\n");
 	while (str[i])
 	{
 		if (checkstr(str[i]) == 0)
@@ -80,11 +76,9 @@ int	is_duplicate(t_stack *stack)
 	while (stack)
 	{
 		value = stack->value;
-		// printf("value is %d\n",value);
 		temp = stack->next;
 		while (temp)
 		{
-			// printf("temp is %d\n",temp->value);
 			if (value == temp->value)
 				return (0);
 			temp = temp->next;
@@ -105,8 +99,8 @@ int	is_sort(t_stack *stack)
 	{
 		if (value > stack->value)
 			return (0);
-		stack = stack->next;
 		value = stack->value;
+		stack = stack->next;
 	}
 	return (1);
 }

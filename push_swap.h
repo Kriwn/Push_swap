@@ -6,7 +6,7 @@
 /*   By: krwongwa <krwongwa@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 21:32:38 by krwongwa          #+#    #+#             */
-/*   Updated: 2024/06/07 13:31:00 by krwongwa         ###   ########.fr       */
+/*   Updated: 2024/06/12 02:04:24 by krwongwa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,9 @@ typedef struct push_swap
 {
 	t_stack		*a;
 	t_stack		*b;
-	char *ans;
-	char **temp;
+	char 		*ans;
+	int			max_index;
+	char		**temp;
 }t_push_swap;
 
 
@@ -56,20 +57,14 @@ int	makearray(char **ptr, char const *s, char c);
 char	**ft_split(char const *s, char c);
 
 //------------instruction1.c----------//
-void	pusha(t_stack **a,t_stack **b);
-void	pushb(t_stack **a,t_stack **b);
-void	swapa(t_stack **a);
-void	swapb(t_stack **b);
+void	push(t_stack **from, t_stack **to, char *str);
+void	swap(t_stack **node,char *str);
 void	sswap(t_stack **a,t_stack **b);
 
 //------------instruction2.c----------//
-void rotatea(t_stack **a);
-void rotateb(t_stack **b);
+void rotate(t_stack **node,char *str);
 void rrotate(t_stack **a,t_stack **b);
-
-//------------instruction3.c----------//
-void	reverse_rotatea(t_stack **a);
-void	reverse_rotateb(t_stack **b);
+void	reverse_rotate(t_stack **node, char *str);
 void	rreverse_rotate(t_stack **a,t_stack **b);
 
 //------------list.c----------------//
@@ -78,6 +73,21 @@ t_stack	*find_last(t_stack **stack);
 t_stack	*find_before_last(t_stack **stack);
 int	fill_a(t_stack **a,char **data);
 void	print_list(t_stack *stack);
+void	print_list_index(t_stack *stack);
+
+
+//----------------pre sort-------------//
+t_stack *find_min_index(t_stack *a);
+void	pre_sort(t_push_swap data);
+void find_two_min(t_push_swap **node);
+
+//----------------sort--------------//
+void	sort(t_push_swap *data);
+void	sort_two(t_stack **node,char *str);
+void	sort_three(t_stack **node, char *str);
+void	sort_four(t_push_swap *data);
+void	sort_five(t_push_swap *data);
+
 
 //---------------utils.c----------//
 char	*ft_strjoin(char const *s1, char const *s2);
@@ -85,8 +95,6 @@ long	ft_atol(const char *nptr);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 size_t	ft_strlen(const char *s);
 size_t	ft_strlcpy(char *dst, const char *src, size_t size);
-
-
 
 //------------ utils2.c ---------//
 char *loopjoin(char **argv, int argc);

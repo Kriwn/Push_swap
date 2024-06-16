@@ -6,7 +6,7 @@
 /*   By: krwongwa <krwongwa@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 21:40:36 by krwongwa          #+#    #+#             */
-/*   Updated: 2024/06/16 17:00:14 by krwongwa         ###   ########.fr       */
+/*   Updated: 2024/06/16 22:04:10 by krwongwa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,6 +90,8 @@ size_t	ft_strlen(const char *s)
 	size_t	count;
 
 	count = 0;
+	if (!s)
+		return (count);
 	while (s[count])
 		count++;
 	return (count);

@@ -6,11 +6,30 @@
 /*   By: krwongwa <krwongwa@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 21:38:52 by krwongwa          #+#    #+#             */
-/*   Updated: 2024/06/16 22:03:33 by krwongwa         ###   ########.fr       */
+/*   Updated: 2024/06/16 23:52:31 by krwongwa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+int	is_all_space(char *str)
+{
+	size_t	i;
+	int		flag;
+
+	flag = 1;
+	i = 1;
+	while (str[i])
+	{
+		if (!(str[i] >= 7 && str[i] <= 13))
+		{
+			break ;
+			flag = 0;
+		}
+		i++;
+	}
+	return (flag);
+}
 
 void	set_space(char *ans)
 {
@@ -29,7 +48,7 @@ int	init_data(t_push_swap *data, char **argv, int argc)
 {
 	int	i;
 
-	i = 0;
+	i = 1;
 	if (argc == 1)
 		exit(0);
 	data->a = NULL;
@@ -38,7 +57,7 @@ int	init_data(t_push_swap *data, char **argv, int argc)
 	data->temp = NULL;
 	while (i < argc)
 	{
-		if (!argv[i] || ft_strlen(argv[i]) == 0)
+		if (!argv[i] || ft_strlen(argv[i]) == 0 || is_all_space(argv[i]))
 			return (-1);
 		i++;
 	}

@@ -6,7 +6,7 @@
 /*   By: krwongwa <krwongwa@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/07 17:35:32 by krwongwa          #+#    #+#             */
-/*   Updated: 2024/06/16 22:11:41 by krwongwa         ###   ########.fr       */
+/*   Updated: 2024/06/16 23:51:37 by krwongwa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ static void	free2d(char **str)
 	}
 	free(str);
 }
+
 void	ft_error(t_push_swap data)
 {
 	write(2, "Error\n", 6);

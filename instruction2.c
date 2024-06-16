@@ -6,17 +6,17 @@
 /*   By: krwongwa <krwongwa@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/12 14:54:20 by krwongwa          #+#    #+#             */
-/*   Updated: 2024/06/12 01:43:27 by krwongwa         ###   ########.fr       */
+/*   Updated: 2024/06/16 16:51:37 by krwongwa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void rotate(t_stack **node,char *str)
+void	rotate(t_stack **node, char *str)
 {
 	t_stack	*cur;
 	t_stack	*temp;
-	t_stack *last;
+	t_stack	*last;
 
 	last = find_last(node);
 	cur = *node;
@@ -24,15 +24,15 @@ void rotate(t_stack **node,char *str)
 	cur->next = NULL;
 	last->next = cur;
 	*node = temp;
-	write(1,"r",1);
-	write(1,str,2);
+	write(1, "r", 1);
+	write(1, str, 2);
 }
 
-void rrotate(t_stack **a,t_stack **b)
+void	rrotate(t_stack **a, t_stack **b)
 {
-	rotate(a,"a\n");
-	rotate(b,"b\n");
-	write(1,"rr\n",3);
+	rotate(a, "a\n");
+	rotate(b, "b\n");
+	write(1, "rr\n", 3);
 }
 
 void	reverse_rotate(t_stack **node, char *str)
@@ -47,13 +47,13 @@ void	reverse_rotate(t_stack **node, char *str)
 	temp->next = cur;
 	beforelast->next = NULL;
 	*node = temp;
-	write(1,"rr",2);
-	write(1,str,2);
+	write(1, "rr", 2);
+	write(1, str, 2);
 }
 
-void	rreverse_rotate(t_stack **a,t_stack **b)
+void	rreverse_rotate(t_stack **a, t_stack **b)
 {
 	reverse_rotate(a, "a\n");
 	reverse_rotate(b, "b\n");
-	write(1,"rrr\n",4);
+	write(1, "rrr\n", 4);
 }

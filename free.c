@@ -6,7 +6,7 @@
 /*   By: krwongwa <krwongwa@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/07 17:35:32 by krwongwa          #+#    #+#             */
-/*   Updated: 2024/06/12 03:10:00 by krwongwa         ###   ########.fr       */
+/*   Updated: 2024/06/16 16:13:36 by krwongwa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,10 @@
 
 void	ft_error(t_push_swap data)
 {
-	write(2,"Error\n",6);
+	write(2, "Error\n", 6);
 	cleardata(data);
 	exit(0);
 }
-
 
 void	cleardata(t_push_swap data)
 {
@@ -34,9 +33,10 @@ void	cleardata(t_push_swap data)
 
 void	freelist(t_stack **node)
 {
-	t_stack *stack = *node;
-	t_stack *temp;
+	t_stack	*stack;
+	t_stack	*temp;
 
+	stack = *node;
 	while (stack)
 	{
 		temp = stack;
@@ -51,8 +51,8 @@ void	free2d(char **str)
 {
 	size_t	i;
 	char	*temp;
-	i = 0;
 
+	i = 0;
 	while (str[i])
 	{
 		temp = str[i];

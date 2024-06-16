@@ -6,13 +6,13 @@
 /*   By: krwongwa <krwongwa@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/08 15:43:17 by krwongwa          #+#    #+#             */
-/*   Updated: 2024/06/16 14:49:55 by krwongwa         ###   ########.fr       */
+/*   Updated: 2024/06/16 16:12:08 by krwongwa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	checkdigit(size_t i,char *str)
+int	checkdigit(size_t i, char *str)
 {
 	int	count;
 	int	flag;
@@ -44,23 +44,20 @@ int	checkdigit(size_t i,char *str)
 int	checkstr(char *str)
 {
 	size_t	i;
-	int		len;
 
 	i = 0;
 	while (str[i] == ' ' || (str[i] >= '\t' && str[i] <= '\r'))
-	{
-			i++;
-	}
+		i++;
 	if (str[0] == '+' || str[0] == '-')
 		i++;
 	if (checkdigit(i, str) == 0)
 		return (0);
-	return(1);
+	return (1);
 }
 
-int check(char **str)
+int	check(char **str)
 {
-	size_t i;
+	size_t	i;
 
 	i = 0;
 	while (str[i])
@@ -74,7 +71,7 @@ int check(char **str)
 
 int	is_duplicate(t_stack *stack)
 {
-	t_stack *temp;
+	t_stack	*temp;
 	int		value;
 
 	while (stack)
@@ -98,7 +95,6 @@ int	is_sort(t_stack *stack)
 
 	value = stack->value;
 	stack = stack->next;
-
 	while (stack)
 	{
 		if (value > stack->value)

@@ -6,7 +6,7 @@
 /*   By: krwongwa <krwongwa@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/12 15:48:30 by krwongwa          #+#    #+#             */
-/*   Updated: 2024/06/16 14:58:48 by krwongwa         ###   ########.fr       */
+/*   Updated: 2024/06/16 16:53:55 by krwongwa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,47 +14,47 @@
 
 void	add_node(t_stack **node, int value)
 {
-	t_stack *cur = *node;
-	t_stack *new_Node = malloc(sizeof(t_stack) * 1);
+	t_stack	*cur;
+	t_stack	*new_node;
 
-	new_Node->value = value;
-	new_Node->next = NULL;
-	new_Node->index = -1;
+	cur = *node;
+	new_node = malloc(sizeof(t_stack) * 1);
+	new_node->value = value;
+	new_node->next = NULL;
+	new_node->index = -1;
 	if (*node == NULL)
-		*node = new_Node;
+		*node = new_node;
 	else
 	{
 		while (cur->next != NULL)
 			cur = cur->next;
-		cur->next = new_Node;
+		cur->next = new_node;
 	}
 }
 
 t_stack	*find_last(t_stack **stack)
 {
-	t_stack *cur;
+	t_stack	*cur;
 
 	cur = *stack;
 	if (cur == NULL)
 		return (NULL);
-	while (cur->next !=NULL)
+	while (cur->next != NULL)
 		cur = cur->next;
 	return (cur);
 }
 
 t_stack	*find_before_last(t_stack **stack)
 {
-	t_stack *cur;
+	t_stack	*cur;
 
 	cur = *stack;
-
 	while (cur->next->next != NULL)
 		cur = cur->next;
 	return (cur);
 }
 
-
-int	fill_a(t_stack **a,char **data)
+int	fill_a(t_stack **a, char **data)
 {
 	long	value;
 	size_t	i;
@@ -86,6 +86,7 @@ int	list_count(t_stack *a)
 	return (count);
 }
 
+/*
 //--------------for debug----------------//
 void	print_list(t_stack *stack)
 {
@@ -104,3 +105,4 @@ void	print_list_index(t_stack *stack)
 		stack = stack->next;
 	}
 }
+*/

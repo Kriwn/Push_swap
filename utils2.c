@@ -6,13 +6,13 @@
 /*   By: krwongwa <krwongwa@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/08 15:07:44 by krwongwa          #+#    #+#             */
-/*   Updated: 2024/06/04 18:07:24 by krwongwa         ###   ########.fr       */
+/*   Updated: 2024/06/16 17:01:43 by krwongwa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-char *loopjoin(char **argv, int argc)
+char	*loopjoin(char **argv, int argc)
 {
 	int		i;
 	char	*ans;
@@ -25,16 +25,16 @@ char *loopjoin(char **argv, int argc)
 	temp = NULL;
 	while (i < argc)
 	{
-		temp_space 	= ft_strjoin(argv[i]," ");
+		temp_space = ft_strjoin(argv[i], " ");
 		temp = ans;
-		ans		= ft_strjoin(ans,temp_space);
+		ans = ft_strjoin(ans, temp_space);
 		if (!temp_space || !ans)
 			return (NULL);
 		free(temp);
 		free(temp_space);
 		i++;
 	}
-	return(ans);
+	return (ans);
 }
 
 void	ft_putstr(char *s)

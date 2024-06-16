@@ -6,7 +6,7 @@
 /*   By: krwongwa <krwongwa@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/07 23:40:33 by krwongwa          #+#    #+#             */
-/*   Updated: 2024/06/12 02:36:37 by krwongwa         ###   ########.fr       */
+/*   Updated: 2024/06/13 16:53:16 by krwongwa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ void	sort(t_push_swap *data)
 		sort_four(data);
 	else if (data->max_index == 5)
 		sort_five(data);
-	// else
-		//radix(data);
+	else
+		radix(data);
 }
 
 void	sort_two(t_stack **node,char *str)
@@ -66,10 +66,11 @@ void	sort_four(t_push_swap *data)
 }
 
 
-// less than 12
+// less than 12    not work some case
 void	sort_five(t_push_swap *data)
 {
-	find_two_min(&data);
+
+	find_two_min(&data); // this one not work btw;
 	sort_three(&data->a,"a\n");
 	sort_two(&data->b,"b\n");
 	swap(&data->b,"b\n");

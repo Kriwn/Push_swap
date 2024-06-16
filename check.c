@@ -6,7 +6,7 @@
 /*   By: krwongwa <krwongwa@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/08 15:43:17 by krwongwa          #+#    #+#             */
-/*   Updated: 2024/06/08 23:24:50 by krwongwa         ###   ########.fr       */
+/*   Updated: 2024/06/16 14:44:13 by krwongwa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	checkdigit(size_t i,char *str)
 		else
 			return (0);
 	}
-	if (count > 10)
+	if (count > 10 && !is_zero)
 		return (0);
 	while (str[i] == ' ' || (str[i] >= '\t' && str[i] <= '\r'))
 		i++;

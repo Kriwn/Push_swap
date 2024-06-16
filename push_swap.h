@@ -6,7 +6,7 @@
 /*   By: krwongwa <krwongwa@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 21:32:38 by krwongwa          #+#    #+#             */
-/*   Updated: 2024/06/12 02:04:24 by krwongwa         ###   ########.fr       */
+/*   Updated: 2024/06/16 13:50:47 by krwongwa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,16 +72,23 @@ void	add_node(t_stack **node, int value);
 t_stack	*find_last(t_stack **stack);
 t_stack	*find_before_last(t_stack **stack);
 int	fill_a(t_stack **a,char **data);
+int	list_count(t_stack *a);
+
+// debug
 void	print_list(t_stack *stack);
 void	print_list_index(t_stack *stack);
 
 
-//----------------pre sort-------------//
+//----------------pre sort.c-------------//
 t_stack *find_min_index(t_stack *a);
 void	pre_sort(t_push_swap data);
 void find_two_min(t_push_swap **node);
 
-//----------------sort--------------//
+//--------------radix.c----------------//
+int	findmaxbit(t_push_swap *data);
+void	radix(t_push_swap *data);
+
+//----------------sort.c--------------//
 void	sort(t_push_swap *data);
 void	sort_two(t_stack **node,char *str);
 void	sort_three(t_stack **node, char *str);

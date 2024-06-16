@@ -6,7 +6,7 @@
 /*   By: krwongwa <krwongwa@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/12 15:48:30 by krwongwa          #+#    #+#             */
-/*   Updated: 2024/06/10 13:10:34 by krwongwa         ###   ########.fr       */
+/*   Updated: 2024/06/16 13:50:37 by krwongwa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,20 @@ int	fill_a(t_stack **a,char **data)
 	if (!is_duplicate(*a))
 		return (-1);
 	return (i);
+}
+
+int	list_count(t_stack *a)
+{
+	int	count;
+
+	count = 0;
+	while (a)
+	{
+		a = a->next;
+		count++;
+	}
+
+	return (count);
 }
 
 //--------------for debug----------------//

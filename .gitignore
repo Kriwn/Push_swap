@@ -1,2 +1,7 @@
 checker_linux
 checker_mac
+push_swap_tester/
+Push_Swap_tester/
+Push-Swap-Tester/
+*.txt
+push_swap_test_linux.sh

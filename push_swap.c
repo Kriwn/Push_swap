@@ -6,7 +6,7 @@
 /*   By: krwongwa <krwongwa@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 21:38:52 by krwongwa          #+#    #+#             */
-/*   Updated: 2024/06/16 19:42:52 by krwongwa         ###   ########.fr       */
+/*   Updated: 2024/06/16 20:18:38 by krwongwa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ int	main(int argc, char **argv)
 {
 	t_push_swap	data;
 
-	initdata(&data, argv, argc);
+	init_data(&data, argv, argc);
 	if (ft_strlen(data.ans) == 1)
 		ft_error(data);
 	if (!check(data.temp) || !*data.temp)

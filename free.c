@@ -6,12 +6,42 @@
 /*   By: krwongwa <krwongwa@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/07 17:35:32 by krwongwa          #+#    #+#             */
-/*   Updated: 2024/06/16 22:02:41 by krwongwa         ###   ########.fr       */
+/*   Updated: 2024/06/16 22:11:41 by krwongwa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+static void	freelist(t_stack **node)
+{
+	t_stack	*stack;
+	t_stack	*temp;
+
+	stack = *node;
+	while (stack)
+	{
+		temp = stack;
+		stack = stack->next;
+		free(temp);
+	}
+	free(stack);
+	*node = NULL;
+}
+
+static void	free2d(char **str)
+{
+	size_t	i;
+	char	*temp;
+
+	i = 0;
+	while (str[i])
+	{
+		temp = str[i];
+		free(temp);
+		i++;
+	}
+	free(str);
+}
 void	ft_error(t_push_swap data)
 {
 	write(2, "Error\n", 6);
@@ -29,35 +59,4 @@ void	cleardata(t_push_swap data)
 		freelist(&data.a);
 	if (data.b)
 		freelist(&data.b);
-}
-
-void	freelist(t_stack **node)
-{
-	t_stack	*stack;
-	t_stack	*temp;
-
-	stack = *node;
-	while (stack)
-	{
-		temp = stack;
-		stack = stack->next;
-		free(temp);
-	}
-	free(stack);
-	*node = NULL;
-}
-
-void	free2d(char **str)
-{
-	size_t	i;
-	char	*temp;
-
-	i = 0;
-	while (str[i])
-	{
-		temp = str[i];
-		free(temp);
-		i++;
-	}
-	free(str);
 }

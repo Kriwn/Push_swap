@@ -6,13 +6,13 @@
 /*   By: krwongwa <krwongwa@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/08 15:43:17 by krwongwa          #+#    #+#             */
-/*   Updated: 2024/06/16 22:02:23 by krwongwa         ###   ########.fr       */
+/*   Updated: 2024/06/16 22:08:23 by krwongwa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	checkdigit(size_t i, char *str)
+static int	checkdigit(size_t i, char *str)
 {
 	int	count;
 	int	flag;
@@ -41,7 +41,7 @@ int	checkdigit(size_t i, char *str)
 		return (0);
 }
 
-int	checkstr(char *str)
+static int	checkstr(char *str)
 {
 	size_t	i;
 

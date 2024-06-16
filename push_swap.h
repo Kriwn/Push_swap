@@ -6,7 +6,7 @@
 /*   By: krwongwa <krwongwa@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 21:32:38 by krwongwa          #+#    #+#             */
-/*   Updated: 2024/06/16 21:56:43 by krwongwa         ###   ########.fr       */
+/*   Updated: 2024/06/16 22:11:30 by krwongwa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,6 @@ typedef struct push_swap
 }	t_push_swap;
 
 //------------check.c--------------//
-int	checkdigit(size_t i, char *str);
-int		checkstr(char *str);
 int		check(char **str);
 int		is_duplicate(t_stack *stack);
 int		is_sort(t_stack *stack);
@@ -44,8 +42,6 @@ int		is_sort(t_stack *stack);
 //-------------free.c-------------//
 void	ft_error(t_push_swap data);
 void	cleardata(t_push_swap data);
-void	free2d(char **str);
-void	freelist(t_stack **node);
 
 //------------ft_split.c-----------//
 void	freeall(char ***ptr);

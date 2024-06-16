@@ -6,7 +6,7 @@
 /*   By: krwongwa <krwongwa@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 21:32:38 by krwongwa          #+#    #+#             */
-/*   Updated: 2024/06/16 17:07:42 by krwongwa         ###   ########.fr       */
+/*   Updated: 2024/06/16 17:51:14 by krwongwa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ void	reverse_rotate(t_stack **node, char *str);
 void	rreverse_rotate(t_stack **a, t_stack **b);
 
 //------------list.c----------------//
-void	add_node(t_stack **node, int value);
+int		add_node(t_stack **node, int value);
 t_stack	*find_last(t_stack **stack);
 t_stack	*find_before_last(t_stack **stack);
 int		fill_a(t_stack **a, char **data);

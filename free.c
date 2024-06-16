@@ -6,7 +6,7 @@
 /*   By: krwongwa <krwongwa@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/07 17:35:32 by krwongwa          #+#    #+#             */
-/*   Updated: 2024/06/16 16:13:36 by krwongwa         ###   ########.fr       */
+/*   Updated: 2024/06/16 18:56:26 by krwongwa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	ft_error(t_push_swap data)
 {
 	write(2, "Error\n", 6);
 	cleardata(data);
-	exit(0);
+	exit(1);
 }
 
 void	cleardata(t_push_swap data)

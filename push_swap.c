@@ -6,7 +6,7 @@
 /*   By: krwongwa <krwongwa@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 21:38:52 by krwongwa          #+#    #+#             */
-/*   Updated: 2024/06/16 17:00:20 by krwongwa         ###   ########.fr       */
+/*   Updated: 2024/06/16 17:54:19 by krwongwa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,16 +31,10 @@ int	main(int argc, char **argv)
 	if (ft_strlen(data.ans) == 1)
 		ft_error(data);
 	if (!check(data.temp))
-	{
 		ft_error(data);
-		return (0);
-	}
 	data.max_index = fill_a(&data.a, data.temp);
 	if (data.max_index == -1)
-	{
 		ft_error(data);
-		return (0);
-	}
 	if (!is_sort(data.a))
 	{
 		pre_sort(data);

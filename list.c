@@ -6,19 +6,21 @@
 /*   By: krwongwa <krwongwa@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/12 15:48:30 by krwongwa          #+#    #+#             */
-/*   Updated: 2024/06/16 16:53:55 by krwongwa         ###   ########.fr       */
+/*   Updated: 2024/06/16 17:50:59 by krwongwa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	add_node(t_stack **node, int value)
+int	add_node(t_stack **node, int value)
 {
 	t_stack	*cur;
 	t_stack	*new_node;
 
 	cur = *node;
 	new_node = malloc(sizeof(t_stack) * 1);
+	if (new_node == NULL)
+		return (-1);
 	new_node->value = value;
 	new_node->next = NULL;
 	new_node->index = -1;
@@ -30,6 +32,7 @@ void	add_node(t_stack **node, int value)
 			cur = cur->next;
 		cur->next = new_node;
 	}
+	return (1);
 }
 
 t_stack	*find_last(t_stack **stack)
@@ -65,7 +68,8 @@ int	fill_a(t_stack **a, char **data)
 		value = ft_atol(data[i]);
 		if (value > INT_MAX || value < INT_MIN)
 			return (-1);
-		add_node(a, value);
+		if (add_node(a, value) == -1)
+			return (-1);
 		i++;
 	}
 	if (!is_duplicate(*a))

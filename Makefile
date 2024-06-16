@@ -4,7 +4,7 @@ SRCS = check.c free.c ft_split.c instruction1.c instruction2.c list.c push_swap.
 
 OBJS  = $(SRCS:.c=.o)
 
-
+HEADER_FILE = push_swap.h
 
 CC = cc
 CFLAG = -Wall -Wextra -Werror -Wunreachable-code
@@ -15,7 +15,7 @@ $(NAME): $(OBJS)
 		$(CC) $(CFLAG) $(OBJS) -o $(NAME)
 
 %.o: %.c $(HEADER_FILE)
-		$(CC) -c $(CFLAG) $^ -o $@
+		$(CC) -c $(CFLAG) $< -o $@
 
 clean:
 	rm -f $(OBJS)

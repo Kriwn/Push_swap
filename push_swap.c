@@ -6,7 +6,7 @@
 /*   By: krwongwa <krwongwa@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 21:38:52 by krwongwa          #+#    #+#             */
-/*   Updated: 2024/06/16 23:52:31 by krwongwa         ###   ########.fr       */
+/*   Updated: 2024/06/17 00:00:07 by krwongwa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ int	is_all_space(char *str)
 	size_t	i;
 	int		flag;
 
-	flag = 1;
 	i = 1;
 	while (str[i])
 	{
@@ -26,6 +25,8 @@ int	is_all_space(char *str)
 			break ;
 			flag = 0;
 		}
+		else
+			flag = 1;
 		i++;
 	}
 	return (flag);

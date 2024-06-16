@@ -6,19 +6,33 @@
 /*   By: krwongwa <krwongwa@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 21:38:52 by krwongwa          #+#    #+#             */
-/*   Updated: 2024/06/16 17:54:19 by krwongwa         ###   ########.fr       */
+/*   Updated: 2024/06/16 19:42:52 by krwongwa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	initdata(t_push_swap *data, char **argv, int argc)
+void	set_space(char *ans)
+{
+	size_t	i;
+
+	i = 0;
+	while (ans[i])
+	{
+		if ((ans[i] >= 7 && ans[i] <= 13))
+			ans[i] = ' ';
+		i++;
+	}
+}
+
+void	init_data(t_push_swap *data, char **argv, int argc)
 {
 	if (argc == 1)
 		exit(0);
 	data->a = NULL;
 	data->b = NULL;
 	data->ans = loopjoin(argv, argc);
+	set_space(data->ans);
 	data->temp = ft_split(data->ans, ' ');
 	data->max_index = 0;
 }
@@ -30,7 +44,7 @@ int	main(int argc, char **argv)
 	initdata(&data, argv, argc);
 	if (ft_strlen(data.ans) == 1)
 		ft_error(data);
-	if (!check(data.temp))
+	if (!check(data.temp) || !*data.temp)
 		ft_error(data);
 	data.max_index = fill_a(&data.a, data.temp);
 	if (data.max_index == -1)

@@ -6,7 +6,7 @@
 /*   By: krwongwa <krwongwa@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/12 15:48:30 by krwongwa          #+#    #+#             */
-/*   Updated: 2024/06/16 13:50:37 by krwongwa         ###   ########.fr       */
+/*   Updated: 2024/06/16 14:58:48 by krwongwa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,10 +80,9 @@ int	list_count(t_stack *a)
 	count = 0;
 	while (a)
 	{
-		a = a->next;
 		count++;
+		a = a->next;
 	}
-
 	return (count);
 }
 

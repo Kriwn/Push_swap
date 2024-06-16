@@ -6,7 +6,7 @@
 /*   By: krwongwa <krwongwa@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/08 15:43:17 by krwongwa          #+#    #+#             */
-/*   Updated: 2024/06/16 14:46:16 by krwongwa         ###   ########.fr       */
+/*   Updated: 2024/06/16 14:49:55 by krwongwa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,9 @@
 int	checkdigit(size_t i,char *str)
 {
 	int	count;
+	int	flag;
 
+	flag = 1;
 	count = 0;
 	while (str[i])
 	{
@@ -23,11 +25,13 @@ int	checkdigit(size_t i,char *str)
 		{
 			i++;
 			count++;
+			if (str[i] != '0')
+				flag = 0;
 		}
 		else
 			return (0);
 	}
-	if (count > 10)
+	if (count > 10 && flag)
 		return (0);
 	while (str[i] == ' ' || (str[i] >= '\t' && str[i] <= '\r'))
 		i++;

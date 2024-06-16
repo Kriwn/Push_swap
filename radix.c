@@ -6,7 +6,7 @@
 /*   By: krwongwa <krwongwa@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/08 22:32:16 by krwongwa          #+#    #+#             */
-/*   Updated: 2024/06/16 13:53:47 by krwongwa         ###   ########.fr       */
+/*   Updated: 2024/06/16 15:42:37 by krwongwa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,26 +30,24 @@ int	findmaxbit(t_push_swap *data)
 void	radix(t_push_swap *data)
 {
 	int	max;
-	t_stack	*cur;
-	int	count;
+	int	i;
+	int loop;
+
+	loop = 0;
 	max = findmaxbit(data);
-	while (max--)
+	while (max >= loop && !is_sort(data->a))
 	{
-		cur = data->a;
-		count = list_count(data->a);
-		while (count)
+		i = 0;
+		while (i < data->max_index)
 		{
-			data->a->index >>= 1;
-			if ((data->a->index % 2) & 1)
+			if ((data->a->index>>loop & 1))
 				rotate(&data->a,"a\n");
 			else
 				push(&data->a,&data->b,"b\n");
-			count--;
+			i++;
 		}
 		while (data->b)
 			push(&data->b, &data->a,"a\n");
+		loop++;
 	}
-	// print_list(data->a);
-	// print_list(data->b);
-
 }

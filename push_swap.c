@@ -6,7 +6,7 @@
 /*   By: krwongwa <krwongwa@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 21:38:52 by krwongwa          #+#    #+#             */
-/*   Updated: 2024/06/16 14:39:24 by krwongwa         ###   ########.fr       */
+/*   Updated: 2024/06/16 15:42:49 by krwongwa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@ int main(int argc, char **argv)
 		pre_sort(data);
 		sort(&data);
 	}
+
 	// print_list(data.a);
 	// print_list_index(data.a);
 

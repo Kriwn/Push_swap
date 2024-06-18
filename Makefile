@@ -11,7 +11,7 @@ CFLAG = -Wall -Wextra -Werror -Wunreachable-code
 
 all: $(NAME)
 
-$(NAME): norm $(OBJS)
+$(NAME):$(OBJS)
 		$(CC) $(CFLAG) $(OBJS) -o $(NAME)
 
 %.o: %.c $(HEADER_FILE)
@@ -25,7 +25,4 @@ fclean:clean
 
 re: fclean all
 
-norm :
-	norminette $(SRCS) $(HEADER_FILE)
-
-.PHONY: all clean fclean re norm
+.PHONY: all clean fclean re
